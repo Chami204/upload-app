@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Multiple Images and PDFs</title>
+</head>
+<body>
+    <h1>Upload Multiple Images and PDFs</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label>Parent Folder:</label><br>
+        <input type="text" name="parent_folder"><br><br>
+
+        <label>Subfolder (Optional):</label><br>
+        <input type="text" name="sub_folder"><br><br>
+
+        <label>Nested Folder (Optional):</label><br>
+        <input type="text" name="nested_folder"><br><br>
+
+        <label>Select Files (multiple):</label><br>
+        <input type="file" name="file" multiple><br><br> <!-- 🔥 Multiple Files -->
+
+        <input type="submit" value="Upload">
+    </form>
+
+    <h2>Available Folders:</h2>
+    <ul>
+    {% for folder in folders %}
+        <li>{{ folder }}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
